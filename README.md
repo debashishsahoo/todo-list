@@ -1,6 +1,6 @@
 # Todo Mate
 
-Todo Mate allows you to keep track of your upcoming tasks in a user-friendly manner, tick them off seamlessly when completed, and ensures that you never fall behind on your responsibilities.
+Todo Mate is a simple tool that allows you to keep track of your upcoming tasks in a user-friendly manner, tick them off seamlessly when completed, and ensures that you never fall behind on your responsibilities.
 
 <img width="1440" alt="Screen Shot 2021-12-16 at 21 21 26" src="https://user-images.githubusercontent.com/69211573/146372500-9ba64f86-4b4d-4f0e-a2af-dc8b659f8241.png">
 
