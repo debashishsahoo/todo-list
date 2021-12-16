@@ -82,7 +82,7 @@ body {
     }
 }
 
-#expired {
+#overdue {
     background-color: rgb(233, 163, 163);
     &:hover {
         background-color: rgb(216, 87, 87);
@@ -128,7 +128,7 @@ body {
     border: 3px solid black;
 }
 
-.completed, .expired, .tomorrow, .upcoming {
+.completed, .overdue, .tomorrow, .upcoming {
     display: none;
 }
 
@@ -136,7 +136,7 @@ body {
     display: block;
 }
 
-.expired, .today, .tomorrow, .upcoming {
+.overdue, .today, .tomorrow, .upcoming {
     ul {
         list-style: none;
         padding: 10px 10px 0px 10px;    

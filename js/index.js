@@ -5,13 +5,13 @@ let todayContainer = document.querySelector(".today");
 let tomorrowContainer = document.querySelector(".tomorrow");
 let upcomingContainer = document.querySelector(".upcoming");
 let completedContainer = document.querySelector(".completed");
-let expiredContainer = document.querySelector(".expired");
+let overdueContainer = document.querySelector(".overdue");
 
 let todayList = document.querySelector(".today ul");
 let completedList = document.querySelector(".completed ul");
 let tomorrowList = document.querySelector(".tomorrow ul");
 let upcomingList = document.querySelector(".upcoming ul");
-let expiredList = document.querySelector(".expired ul");
+let overdueList = document.querySelector(".overdue ul");
 
 let addTaskBtn = document.querySelector("#open-modal");
 let modalContainer = document.querySelector(".modal");
@@ -95,11 +95,11 @@ function addTask(event) {
         document.querySelectorAll(".tabs button").forEach(button => {button.disabled= false});
         document.querySelector("#tomorrow").disabled = true;
     } else if (date < todayDate) {
-        expiredList.insertAdjacentHTML("beforeend", insertHTMLText);
-        expiredContainer.style.display = "block";
-        $(".expired").siblings().css({"display": "none"});
+        overdueList.insertAdjacentHTML("beforeend", insertHTMLText);
+        overdueContainer.style.display = "block";
+        $(".overdue").siblings().css({"display": "none"});
         document.querySelectorAll(".tabs button").forEach(button => {button.disabled= false});
-        document.querySelector("#expired").disabled = true;
+        document.querySelector("#overdue").disabled = true;
     } else if (date > todayDate) {
         upcomingList.insertAdjacentHTML("beforeend", insertHTMLText);
         upcomingContainer.style.display = "block";
@@ -164,7 +164,7 @@ function fetchTasks() {
             tomorrowList.innerHTML += insertHTMLText;  
             upcomingList.innerHTML += insertHTMLText;  
         } else if (date < todayDate) {
-            expiredList.innerHTML += insertHTMLText;  
+            overdueList.innerHTML += insertHTMLText;  
         } else if (date > todayDate) {
             upcomingList.innerHTML += insertHTMLText;  
         }
@@ -178,7 +178,6 @@ function fetchTasks() {
         completedTasks = JSON.parse(localStorage.getItem("completedTasks"));
     }
     completedTasks.forEach(function(taskInfo) {
-        // let id = taskInfo["id"];
         let task = taskInfo["task"];
         let date = taskInfo["date"];
         let time = taskInfo["time"];
@@ -200,7 +199,12 @@ If a task is designated for today or tomorrow, ensure that it is removed from bo
 "Today"/"Tomorrow" and "Upcoming" lists when user completes/deletes the task */ 
 function removeTaskFromAllCategories(taskDate, todayDate, tomorrowDate, parentListItem) {
     if (taskDate < todayDate) {
-        parentListItem.remove();
+        // Changing the play state of task fade out animation to "running"
+        parentListItem.style.animationPlayState = "running";
+
+        parentListItem.addEventListener("animationend", () => {
+            parentListItem.remove();
+        })
     } else if (taskDate === todayDate) {
         if (parentListItem.parentElement.parentElement.classList.contains("today")) {
             let searchListItem = parentListItem.outerHTML;
@@ -355,7 +359,7 @@ function listenForButtonClicks() {
         }
     });
 
-    // Tab Buttons - when the user clicks on task tabs, namely: Completed, Expired, Today, Tomorrow, Upcoming
+    // Tab Buttons - when the user clicks on task tabs, namely: Completed, Overdue, Today, Tomorrow, Upcoming
     document.querySelectorAll(".tab-btn").forEach(button => {
         button.onclick = function() {
             btnClickedTab = this.dataset.tab;
@@ -384,8 +388,8 @@ function listenForButtonClicks() {
                 upcomingContainer.style.display = "block";
                 $(".upcoming").siblings().css({"display": "none"});
             } else {
-                expiredContainer.style.display = "block";
-                $(".expired").siblings().css({"display": "none"});
+                overdueContainer.style.display = "block";
+                $(".overdue").siblings().css({"display": "none"});
             };
         }
     })
