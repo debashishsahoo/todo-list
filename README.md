@@ -12,17 +12,15 @@ Todo Mate allows you to keep track of your upcoming tasks in a user-friendly man
 <img width="1440" alt="calendar-view" src="https://user-images.githubusercontent.com/69211573/146373370-7247e061-e959-4b0e-a881-43bf3c0cd6d3.png">
 <img width="1440" alt="time-view" src="https://user-images.githubusercontent.com/69211573/146373431-9fc71423-935c-4a8d-9758-59bec7d8019c.png">
 
-![adding-tasks-clip](https://user-images.githubusercontent.com/69211573/146375481-be3c88c1-0b16-404b-8919-dff8240f6280.gif)
-
 - Tick your tasks off when you complete them by hovering hover and clicking the ✅ check button, and watch them fade away while your remaining tasks slide into place beautifully
 
 ![complete-all-tasks](https://user-images.githubusercontent.com/69211573/146375556-2410f778-757a-4dd0-910a-e1d321c52528.gif)
 
+![adding-tasks-clip](https://user-images.githubusercontent.com/69211573/146375481-be3c88c1-0b16-404b-8919-dff8240f6280.gif)
+
 - Navigate seamlessly between tabs to see tasks for **Today** (by default) and **Tomorrow**, access all your **Upcoming** tasks, all your **Completed** tasks, along with a list of **Overdue** tasks that you assigned to yourself but forgot to complete on time!
 
 ![navigating-tabs-clip](https://user-images.githubusercontent.com/69211573/146375610-216eb23e-90c2-4b70-abfc-467b1738c51a.gif)
-
-![showing-that-completed-tasks-go](https://user-images.githubusercontent.com/69211573/146376061-a45e17f7-ec03-4959-9744-6dea19d3da64.gif)
 
 - Hover over and click the ❌ cross button to delete any task.
 
