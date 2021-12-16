@@ -1,0 +1,288 @@
+@import "_variables.scss";
+@import "_animations.scss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: $background-color;
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    gap: 40px;
+    justify-items: stretch;
+    grid-template-areas: 
+        "header"
+        "content";
+}
+
+.header {
+    grid-area: "header";
+    background-color: $header-color;
+    line-height: 20vh;
+    a {
+        font-size: 4rem;
+        margin-left: 30px;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.content {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: auto;
+    grid-template-areas: 
+        "tabs"
+        "tasks";
+    grid-area: "content";
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: "tabs";
+    width: 80%;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 100px;
+
+    margin: 0 auto;
+}
+
+.extra-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 5px;
+    button {
+        border: none;
+        &:disabled {
+            color: black;
+            border: 3px solid black;
+        }    
+    }
+}
+
+#completed {
+    background-color: rgb(119, 201, 119);
+    &:hover {
+        background-color: rgb(11, 168, 51);
+        transition: color .3s ease-in-out;
+        color: white;
+    }
+}
+
+#expired {
+    background-color: rgb(233, 163, 163);
+    &:hover {
+        background-color: rgb(216, 87, 87);
+        transition: color .3s ease-in-out;
+        color: white;
+    }
+}
+
+.main-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 5px;
+    button {
+        color: black;
+        background-color: white;
+        border: none;
+        &:hover {
+            transition: color .3s ease-in-out;
+            // background-color: rgb(61, 60, 60);
+            background-color: $header-color;
+            color: white;
+        }
+        &:disabled {
+            border: 3px solid black;
+        }    
+    }
+}
+
+.add-btn {
+    border: none;
+}
+
+.tasks {
+    grid-area: "tasks";
+    width: 80%;
+    max-width: 80%;
+    padding: 10px;
+    margin: 0 auto;
+    height: 60vh;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    border: 3px solid black;
+}
+
+.completed, .expired, .tomorrow, .upcoming {
+    display: none;
+}
+
+.today {
+    display: block;
+}
+
+.expired, .today, .tomorrow, .upcoming {
+    ul {
+        list-style: none;
+        padding: 10px 10px 0px 10px;    
+    }
+}
+
+.completed {
+    ul {
+        list-style: square;    
+    }
+    li {
+        margin: 10px;
+    }
+}
+
+li {
+    animation-name: taskFadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 300px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: block;
+    background-color: white;
+    margin: auto;
+    width: 75%;
+    overflow: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.submit-btn {
+    &:hover {
+        transition: color .3s ease-in-out;
+        background-color: rgb(61, 60, 60);
+        color: white;
+    }
+}
+
+#close-btn {
+    float: right;
+    color: rgb(155, 155, 155);
+    &:hover, :focus {
+        color: black;
+        cursor: pointer;
+    }
+}
+
+.date-html {
+    background-color: lightgreen;
+}
+
+.time-html {
+    background-color: rgb(255, 198, 207);
+}
+
+.task-html {
+    padding-left: 5px;
+}
+
+.complete-btn {
+    background-color: rgb(0, 255, 234);
+    border: 1px solid black;
+    border-radius: 10%;
+    margin: 5px;
+    &:hover {
+        transform: scale(1.1);
+        background-color: rgb(21, 255, 0);
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.delete-btn {
+    background-color: rgb(252, 72, 72);
+    border: 1px solid black;
+    border-radius: 10%;
+    opacity: 30%;
+    &:hover {
+        transform: scale(1.1);
+        opacity: 100%;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+// Responsive layouts for different devices and screen sizes 
+@media only screen and (max-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+    .header {
+        line-height: 17vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    html {
+        font-size: 12px;
+    }
+    .header {
+        line-height: 13vh;
+    }
+}
+
+@media only screen and (max-width: 466px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    html {
+        font-size: 9px;
+    }
+    .tasks {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    html {
+        font-size: 8.5px;
+    }
+    .header {
+        line-height: 10vh;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    html {
+        font-size: 7px;
+    }
+}

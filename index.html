@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Mate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+   
+    <div class="wrapper">
+
+        <!-- Header -->
+        <div class="header">
+            <a href="#">Todo Mate</a>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+
+            <!-- Tabs: toggle between Completed, Pending, Today, Tomorrow, Upcoming  -->
+            <div class="tabs">
+                <div class="extra-tabs">
+                    <button class="tab-btn" data-tab="completed" id="completed">Completed</button>
+                    <button class="tab-btn" data-tab="expired" id="expired">Expired</button>    
+                </div>
+                <div class="main-tabs">
+                    <button class="tab-btn" data-tab="today" id="today" disabled>Today</button>
+                    <button class="tab-btn" data-tab="tomorrow" id="tomorrow">Tomorrow</button>
+                    <button class="tab-btn" data-tab="upcoming" id="upcoming">Upcoming</button>
+                    <button class="add-btn" id="open-modal"><i class="fa fa-plus-circle" aria-hidden="true" height="20px" width="20px"></i></button>        
+                </div>
+            </div>
+
+            <!-- Modal for adding tasks -->
+            <div class="modal">
+                <div class="modal-content">
+                    Add New Task
+                    <form class="add-task-form" onsubmit="addTask(event)">
+                        <input type="text" id="task-input" name="task" autofocus required /> 
+                        <input type="date" id="date-input" name="date" />     
+                        <input type="time" id="time-input" name="time" />     
+
+                        <!-- Safari Bug: Hidden input field to prevent form from submitting the same task every 
+                        time after the first instance that the user hits the Enter key -->
+                        <input type="text" style="display: none;" /> 
+
+                        <button class="submit-btn" type="submit"><i class="fa fa-plus-circle" aria-hidden="true" height="20px" width="20px"></i></button>
+                    </form>
+                    <span id="close-btn">&times;</span>
+                </div>
+            </div>
+
+            <!-- Tasks -->
+            <div class="tasks">
+                <div class="completed">
+                    <ul>
+    
+                    </ul>
+                </div>
+    
+                <div class="expired">
+                    <ul>
+    
+                    </ul>
+                </div>
+    
+                <div class="today">
+                    <ul>
+    
+                    </ul>
+                </div>
+    
+                <div class="tomorrow">
+                    <ul>
+    
+                    </ul>
+                </div>
+    
+                <div class="upcoming">
+                    <ul>
+    
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
