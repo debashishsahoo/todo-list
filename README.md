@@ -16,21 +16,20 @@ Todo Mate allows you to keep track of your upcoming tasks in a user-friendly man
 
 ![complete-all-tasks](https://user-images.githubusercontent.com/69211573/146375556-2410f778-757a-4dd0-910a-e1d321c52528.gif)
 
-![adding-tasks-clip](https://user-images.githubusercontent.com/69211573/146375481-be3c88c1-0b16-404b-8919-dff8240f6280.gif)
-
-- Navigate seamlessly between tabs to see tasks for **Today** (by default) and **Tomorrow**, access all your **Upcoming** tasks, all your **Completed** tasks, along with a list of **Overdue** tasks that you assigned to yourself but forgot to complete on time!
-
-![navigating-tabs-clip](https://user-images.githubusercontent.com/69211573/146375610-216eb23e-90c2-4b70-abfc-467b1738c51a.gif)
-
-- Hover over and click the ❌ cross button to delete any task.
-
-![delete-animation](https://user-images.githubusercontent.com/69211573/146375582-a7f9c669-24a3-4a2d-a07f-93c0df8fcd18.gif)
-
 - Responsive layouts for various devices and screen sizes
 
 <img width="247" height="489" alt="mobile-layout" src="https://user-images.githubusercontent.com/69211573/146372981-ba2ea589-412f-4c61-afef-4a12f7f7a3e1.png"> <img width="348" height="489" alt="tablet-layout" src="https://user-images.githubusercontent.com/69211573/146373060-f44bcb07-aa06-4d93-b29d-0571aba5e1cf.png">
 <img width="717" height="489" alt="laptop-layout" src="https://user-images.githubusercontent.com/69211573/146372923-3fc9104a-245f-43fa-b1c0-36e98dfa4497.png">
 
+- Navigate seamlessly between tabs to see tasks for **Today** (by default) and **Tomorrow**, access all your **Upcoming** tasks, all your **Completed** tasks, along with a list of **Overdue** tasks that you assigned to yourself but forgot to complete on time!
+
+![navigating-tabs-clip](https://user-images.githubusercontent.com/69211573/146375610-216eb23e-90c2-4b70-abfc-467b1738c51a.gif)
+
+![adding-tasks-clip](https://user-images.githubusercontent.com/69211573/146375481-be3c88c1-0b16-404b-8919-dff8240f6280.gif)
+
+- Hover over and click the ❌ cross button to delete any task.
+
+![delete-animation](https://user-images.githubusercontent.com/69211573/146375582-a7f9c669-24a3-4a2d-a07f-93c0df8fcd18.gif)
 
 ## Remarks
 
